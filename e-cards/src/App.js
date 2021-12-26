@@ -1,15 +1,43 @@
 
 import './App.css';
-import SignIn from './SignIn';
+import { useState } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import Register from './Register';
+import Login from './Login';
+import { useNavigate } from "react-router-dom";
+
 
 function App() {
 
-  let user = localStorage.getItem("name")
+  const navigate = useNavigate();
+  const [uname,setuname] =useState(
+    ""
+  )
+
+const register = () => {
+  navigate.push('/register')
+}
+
+const login = () => {
+  navigate.push('/login')
+}
+
+  const changename = (name) => {
+    setuname(name)
+  }
   return (
-    <div className="App">
+    
+      <div className="App">
       <h1>Card Maker</h1>
-      {user === null && <SignIn />}
-    </div>
+        <div>
+        {uname === "" && <button onClick={register}> Signup?</button>}
+        {uname === "" && <button onClick={login}> Login?</button>}
+        </div>
+      
+      </div>
+      
+    
+    
   );
 }
 
