@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Register() {
     const navigate= useNavigate();
   const  setLogin = () => {
-    navigate.push('/login')
+    navigate('/login')
     }
     
     return(
