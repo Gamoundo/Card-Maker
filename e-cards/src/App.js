@@ -6,6 +6,8 @@ import Register from './Register';
 import Login from './Login';
 import { useNavigate } from "react-router-dom";
 import Home from './Home';
+import Cards from './Cards';
+import Navbar from './Navbar';
 
 
 function App() {
@@ -30,7 +32,8 @@ const login = () => {
 const routes = useRoutes(
   [{ path: '/', element: <Home  name={uname}/> },
   { path: '/register', element: <Register  changename={changename}/> },
-  { path: '/login', element: <Login /> }
+  { path: '/login', element: <Login /> },
+  { path: '/cards', element: <Cards /> }
 ])
   return (
     
@@ -38,6 +41,7 @@ const routes = useRoutes(
 <div className="App">
       <h1>NJoy</h1>
         <div>
+          {uname !== '' && <Navbar />}
         {(location.pathname === '/'  && uname === "") && <button onClick={register}> Signup?</button>}
         {(location.pathname === '/'  && uname === "") && <button onClick={login}> Login?</button>}
         </div>
