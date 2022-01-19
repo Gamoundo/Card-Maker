@@ -42,3 +42,9 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.tempone {
+  width: 350px;
+  height: 500px;
+  background-color: papayawhip;
+}
