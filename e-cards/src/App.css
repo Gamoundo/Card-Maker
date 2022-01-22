@@ -47,4 +47,21 @@ body {
   width: 350px;
   height: 500px;
   background-color: papayawhip;
+  
+}
+
+.temptwo {
+  width: 350px;
+  height: 500px;
+  background-color: peachpuff;
+  
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 3rem 3rem;
+  border-radius: 2rem;
+  flex-wrap: wrap;
 }
