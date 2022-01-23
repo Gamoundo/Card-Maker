@@ -1,5 +1,6 @@
 body {
-  background-image: linear-gradient(to bottom, #dc3165, #f06650, #f39849, #eac75c, #dbf289);
+  /* background-image: linear-gradient(to bottom, #dc3165, #f06650, #f39849, #eac75c, #dbf289); */
+  background-color: powderblue;
   height: 100vh;
    width: 100vw;
 }
