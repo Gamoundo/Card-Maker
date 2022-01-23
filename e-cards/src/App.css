@@ -1,6 +1,6 @@
 body {
   /* background-image: linear-gradient(to bottom, #dc3165, #f06650, #f39849, #eac75c, #dbf289); */
-  background-color: powderblue;
+  background-color: burlywood;
   height: 100vh;
    width: 100vw;
 }
@@ -12,6 +12,15 @@ body {
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.sidebar {
+  background-color: wheat;
+  overflow: auto;
+  white-space: nowrap;
+  width: 20rem;
+  text-align: left;
+  justify-content: space-between;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -55,6 +64,14 @@ body {
   width: 350px;
   height: 500px;
   background-color: peachpuff;
+  
+}
+
+.usercard {
+  width: 18rem;
+  height: 8rem;
+  background-color: blanchedalmond;
+  
   
 }
 
