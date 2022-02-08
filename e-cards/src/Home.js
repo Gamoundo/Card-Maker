@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'
 import CardForm from './CardForm'
 
 function Home(props) {
@@ -42,10 +42,24 @@ const userCards = [
     }
 ]
 
+
+
 const displayCards = (arr) => {
     return (arr.map((obj) => {
+        const seeCard = () => {
+            props.setCardInfo({
+                sender: props.uname,
+                recipient: obj.recipient,
+                pic: obj.pic,
+                occasion: obj.occasion,
+                message: obj.message,
+                tempChoice: obj.tempChoice
+                
+            })
+                  history.push('/Cards')
+          }
         return(
-            <div className='usercard'>
+            <div className='usercard' onClick={seeCard}>
                 <p> {obj.recipient}</p>
                 <p> {obj.occasion}</p>
                 <p> {obj.message}</p>
@@ -62,7 +76,7 @@ const displayCards = (arr) => {
              <div className='sidebar'>
                 {props.name !== "" && displayCards(userCards)}
              </div>
-            {props.name !== "" &&  <CardForm uname={props.name} />} 
+            {props.name !== "" &&  <CardForm uname={props.name}  />} 
         </div>
     )
     

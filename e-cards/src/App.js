@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Home from './Home';
 import Cards from './Cards';
 import Navbar from './Navbar';
+import Card from './Card';
 
 
 function App() {
@@ -17,6 +18,17 @@ function App() {
   const [uname,setuname] =useState(
     ""
   )
+
+  const [cardInfo, setCardInfo] = useState(
+    {
+        pic: "",
+        recipient: "",
+        sender: "",
+        message: "",
+        occasion: ""
+    }
+
+)
 
 const register = () => {
   navigate('/register')
@@ -30,7 +42,8 @@ const login = () => {
     setuname(name)
 }
 const routes = useRoutes(
-  [{ path: '/', element: <Home  name={uname}/> },
+  [{ path: '/', element: <Home  name={uname} setCardInfo={setCardInfo}/> },
+  { path: '/card', element: <Card  card={cardInfo}/> },
   { path: '/register', element: <Register  changename={changename}/> },
   { path: '/login', element: <Login /> },
   { path: '/cards', element: <Cards /> }
