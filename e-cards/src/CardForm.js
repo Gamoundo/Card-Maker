@@ -1,7 +1,6 @@
-import { React } from "react";
-import { useState } from "react/cjs/react.production.min";
+import React, { useState } from 'react'
 
-function CardForm() {
+function CardForm(props) {
     
     const [formData, setformData] = useState(
         {
@@ -41,17 +40,15 @@ function CardForm() {
                 <div>
                     <input onChange={handleFileChange} type='file' name='photo'/>
                 </div>
+                
                 <div>
-                    <input onChange={handleChange} value={formData.sender} type="text" name="sender"/>
+                    <input onChange={handleChange} placeholder="occasion" value={formData.occas} type="text" name="occas"/>
                 </div>
                 <div>
-                    <input onChange={handleChange} value={formData.occas} type="text" name="occas"/>
+                    <input onChange={handleChange} placeholder="recipient" value={formData.recipient} type="text" name="recipient"/>
                 </div>
                 <div>
-                    <input onChange={handleChange} value={formData.recipient} type="text" name="recipient"/>
-                </div>
-                <div>
-                    <input onChange={handleChange} value={formData.message} type="text" name="message"/>
+                    <input onChange={handleChange} placeholder="message" value={formData.message} type="text" name="message"/>
                 </div>
             </form>
         </div>

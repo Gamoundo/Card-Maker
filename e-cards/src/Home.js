@@ -1,4 +1,5 @@
 import React from 'react';
+import CardForm from './CardForm'
 
 function Home(props) {
 const userCards = [
@@ -43,6 +44,7 @@ const displayCards = (arr) => {
              <div className='sidebar'>
                 {props.name !== "" && displayCards(userCards)}
              </div>
+            {props.name !== "" &&  <CardForm uname={props.name} />} 
         </div>
     )
     
