@@ -19,6 +19,7 @@ body {
   overflow: auto;
   white-space: nowrap;
   width: 20rem;
+  height: 30rem;
   text-align: left;
   justify-content: space-between;
 }
@@ -82,4 +83,10 @@ body {
   padding: 3rem 3rem;
   border-radius: 2rem;
   flex-wrap: wrap;
+}
+
+.cardform {
+  width: 20rem;
+  height: 10rem;
+  background-color: coral;
 }

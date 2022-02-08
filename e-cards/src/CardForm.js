@@ -34,7 +34,7 @@ function CardForm(props) {
         )            
     } 
     return(
-        <div>
+        <div className="cardform">
             <h1> Make Someone's Day</h1>
             <form>
                 <div>

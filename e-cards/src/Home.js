@@ -16,6 +16,24 @@ const userCards = [
         sender: "akilgg"
     },
     {
+        recipient: "Manny",
+        occasion: "Birthday",
+        message: "one step closer to death",
+        sender: "akilgg"
+    },
+    {
+        recipient: "Manny",
+        occasion: "Birthday",
+        message: "one step closer to death",
+        sender: "akilgg"
+    },
+    {
+        recipient: "Manny",
+        occasion: "Birthday",
+        message: "one step closer to death",
+        sender: "akilgg"
+    },
+    {
         recipient: "Lisa",
         occasion: "Promotion",
         message: "Get it girl",
