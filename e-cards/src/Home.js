@@ -1,39 +1,48 @@
-import React, { useState } from 'react'
-import CardForm from './CardForm'
+import React, { useState } from 'react';
+import CardForm from './CardForm';
+import { useNavigate } from "react-router-dom";
 
 function Home(props) {
+
+    const navigate = useNavigate();
 const userCards = [
     {
+        id: 1,
         recipient: "L",
         occasion: "Congrats on Marriage",
         message: "Smartest decision you ever made",
         sender: "akilgg"
     },
     {
+        id: 2,
         recipient: "Manny",
         occasion: "Birthday",
         message: "one step closer to death",
         sender: "akilgg"
     },
     {
+        id: 3,
         recipient: "Manny",
         occasion: "Birthday",
         message: "one step closer to death",
         sender: "akilgg"
     },
     {
+        id: 4,
         recipient: "Manny",
         occasion: "Birthday",
         message: "one step closer to death",
         sender: "akilgg"
     },
     {
+        id: 5,
         recipient: "Manny",
         occasion: "Birthday",
         message: "one step closer to death",
         sender: "akilgg"
     },
     {
+        id: 6,
         recipient: "Lisa",
         occasion: "Promotion",
         message: "Get it girl",
@@ -56,7 +65,7 @@ const displayCards = (arr) => {
                 tempChoice: obj.tempChoice
                 
             })
-                  history.push('/Cards')
+                  navigate('/Card')
           }
         return(
             <div className='usercard' onClick={seeCard}>
