@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function CardForm(props) {
     
+    const navigate = useNavigate();
+const uname = props.uname
+
     const [formData, setformData] = useState(
         {
             photo: "",
             recipient: "",
-            sender: "",
+            sender: uname,
             message: "",
-            occas: ""
+            occasion: ""
         }
 
     )
@@ -23,6 +27,13 @@ function CardForm(props) {
         )
     }
 
+const handleSubmit = (e) => {
+    e.preventDefault();
+    props.update(formData);
+    navigate('/home')
+}
+
+
     const   handleFileChange = (e) => {
         setformData((prevState) => {            
              return{
@@ -30,19 +41,19 @@ function CardForm(props) {
                 [e.target.name]: e.target.files[0]            
              }                      
         }            
-    
+     
         )            
     } 
     return(
         <div className="cardform">
             <h1> Make Someone's Day</h1>
-            <form>
+            <form onSubmit ={handleSubmit}>
                 <div>
                     <input onChange={handleFileChange} type='file' name='photo'/>
                 </div>
                 
                 <div>
-                    <input onChange={handleChange} placeholder="occasion" value={formData.occas} type="text" name="occas"/>
+                    <input onChange={handleChange} placeholder="occasion" value={formData.occasion} type="text" name="occasion"/>
                 </div>
                 <div>
                     <input onChange={handleChange} placeholder="recipient" value={formData.recipient} type="text" name="recipient"/>
@@ -50,6 +61,7 @@ function CardForm(props) {
                 <div>
                     <input onChange={handleChange} placeholder="message" value={formData.message} type="text" name="message"/>
                 </div>
+                <input type="submit" value="New Card"  />
             </form>
         </div>
     )
