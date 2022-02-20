@@ -8,7 +8,7 @@ const uname = props.uname
 
     const [formData, setformData] = useState(
         {
-            photo: "",
+            pic: "",
             recipient: "",
             sender: uname,
             message: "",
@@ -30,7 +30,7 @@ const uname = props.uname
 const handleSubmit = (e) => {
     e.preventDefault();
     props.update(formData);
-    navigate('/home')
+    navigate('/')
 }
 
 
@@ -49,7 +49,7 @@ const handleSubmit = (e) => {
             <h1> Make Someone's Day</h1>
             <form onSubmit ={handleSubmit}>
                 <div>
-                    <input onChange={handleFileChange} type='file' name='photo'/>
+                    <input onChange={handleFileChange} type='file' name='pic'/>
                 </div>
                 
                 <div>

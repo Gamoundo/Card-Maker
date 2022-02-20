@@ -77,12 +77,14 @@ const [allCards, setCards] = useState([
 ]
 )
 
-const updateCards =(obj) => {
+const updateCards =(card) => {
   setCards((prevState) => {            
-    return{
-       ...prevState,            
-       obj           
-    }                      
+    return[
+      ...prevState, card
+    ]
+                   
+                  
+                          
 }            
   )
 
