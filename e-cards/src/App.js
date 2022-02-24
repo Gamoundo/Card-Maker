@@ -15,8 +15,11 @@ function App() {
 
   let location = window.location
   const navigate = useNavigate();
+  const storeduser = window.localStorage.getItem("NewJoy")
   const [uname,setuname] =useState(
-    ""
+  {
+      name: storeduser ? JSON.parse(storeduser).name : ""
+    }
   )
 
   const [cardInfo, setCardInfo] = useState(
@@ -90,7 +93,7 @@ const updateCards =(card) => {
 
 } 
 console.log(allCards)
-const userCards = allCards.filter(obj => obj.sender === uname)
+const userCards = allCards.filter(obj => obj.sender === uname.name)
 
 const register = () => {
   navigate('/register')
@@ -104,7 +107,7 @@ const login = () => {
     setuname(name)
 }
 const routes = useRoutes(
-  [{ path: '/', element: <Home  name={uname} setCardInfo={setCardInfo} cards={userCards} addCards={updateCards}/> },
+  [{ path: '/', element: <Home  name={uname.name} setCardInfo={setCardInfo} cards={userCards} addCards={updateCards}/> },
   { path: '/card', element: <Card  card={cardInfo}/> },
   { path: '/register', element: <Register  changename={changename}/> },
   { path: '/login', element: <Login /> },

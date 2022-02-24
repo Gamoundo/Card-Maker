@@ -7,13 +7,13 @@ function Home(props) {
     const navigate = useNavigate();
 
 
-
+console.log(props.name)
 
 const displayCards = (arr) => {
     return (arr.map((obj) => {
         const seeCard = () => {
             props.setCardInfo({
-                sender: props.uname,
+                sender: props.name,
                 recipient: obj.recipient,
                 pic: obj.pic,
                 occasion: obj.occasion,
