@@ -77,10 +77,13 @@ const displayCards = (arr) => {
         <div>
             {props.name === "" ? <h1>The Homepage</h1>: <h1> {props.name}'s Homepage</h1>}
             <p>A place too make cards for loved ones</p>
+             <div className='twodiv'>
              <div className='sidebar'>
                 {props.name !== "" && displayCards(props.cards)}
              </div>
              {display.message !== "" && stylecard(display)}
+             </div>
+             
             {props.name !== "" &&  <CardForm uname={props.name} update={props.addCards}  setDisplay={setDisplay}/>} 
         </div>
     )

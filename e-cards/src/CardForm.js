@@ -32,11 +32,12 @@ const uname = props.uname
         setformData((prevState) => {
             return{
                 ...prevState,
-                [e.target.name]: e.target.value
+                [e.target.name]: parseInt(e.target.value)
             }
         }
 
         )
+        console.log(e.target.value)
         props.setDisplay(formData)
     }
 
@@ -76,8 +77,8 @@ const handleSubmit = (e) => {
                 </div>
                 <div>
                     <select onChange={styleChange} placeholder="style" value={formData.tempChoice} name="tempChoice">
-                        <option value='one'> 1</option>
-                        <option value='two'> 2</option>
+                        <option value="1"> 1</option>
+                        <option value='2'> 2</option>
                     </select>
                 </div>
                 <input type="submit" value="New Card"  />

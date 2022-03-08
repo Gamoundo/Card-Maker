@@ -85,6 +85,12 @@ body {
   flex-wrap: wrap;
 }
 
+.twodiv {
+  display: flex; 
+  flex-direction: row;
+  padding: 3rem 3rem;
+}
+
 .cardform {
   width: 20rem;
   height: 10rem;
