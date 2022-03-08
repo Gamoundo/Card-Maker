@@ -12,7 +12,8 @@ const uname = props.uname
             recipient: "",
             sender: uname,
             message: "",
-            occasion: ""
+            occasion: "",
+            tempChoice: 0
         }
 
     )
@@ -25,6 +26,18 @@ const uname = props.uname
         }
 
         )
+    }
+
+    const styleChange = (e) => {
+        setformData((prevState) => {
+            return{
+                ...prevState,
+                [e.target.name]: e.target.value
+            }
+        }
+
+        )
+        props.setDisplay(formData)
     }
 
 const handleSubmit = (e) => {
@@ -60,6 +73,12 @@ const handleSubmit = (e) => {
                 </div>
                 <div>
                     <input onChange={handleChange} placeholder="message" value={formData.message} type="text" name="message"/>
+                </div>
+                <div>
+                    <select onChange={styleChange} placeholder="style" value={formData.tempChoice} name="tempChoice">
+                        <option value='one'> 1</option>
+                        <option value='two'> 2</option>
+                    </select>
                 </div>
                 <input type="submit" value="New Card"  />
             </form>
