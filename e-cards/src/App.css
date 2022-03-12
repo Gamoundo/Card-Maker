@@ -56,15 +56,17 @@ body {
 
 .tempone {
   width: 350px;
-  height: 500px;
+  height: 530px;
   background-color: papayawhip;
+  overflow: auto;
   
 }
 
 .temptwo {
   width: 350px;
-  height: 500px;
+  height: 530px;
   background-color: peachpuff;
+  overflow: auto;
   
 }
 

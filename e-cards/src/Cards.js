@@ -13,12 +13,12 @@ const cardInfo = {
 
 const sampleCards = [
     {
-        sender: "Joel",
-        recipient: "Em",
-        pic: 'https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg',
-        message: "Still the greatest time I ever had",
+        sender: "Joanna",
+        recipient: "Alex",
+        pic: 'https://image.shutterstock.com/z/stock-vector-drawing-of-cute-christmas-reindeer-1570187782.jpg',
+        message: "Doubt there'll be happier times than this, but I guess I'm in the holiday spirit.",
         tempChoice: 1,
-        occasion: "Happy Birthday"   
+        occasion: "Merry Christmas"   
     },
     {
         sender: "Joel",
@@ -29,12 +29,12 @@ const sampleCards = [
         occasion: "Happy Birthday"
     },
     {
-        sender: "Joel",
-        recipient: "Em",
-        pic: 'https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg',
-        message: "Still the greatest time I ever had",
+        sender: "Hawthorn",
+        recipient: "Sarah",
+        pic: 'https://cdn1.vectorstock.com/i/1000x1000/91/05/happy-valentines-day-romantic-greeting-card-vector-23729105.jpg',
+        message: "Don't regret meeting you, yet",
         tempChoice: 2,
-        occasion: "Happy Birthday"
+        occasion: "Valentines"
     }
 ]
 

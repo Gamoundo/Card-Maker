@@ -37,7 +37,7 @@ const uname = props.uname
         }
 
         )
-        console.log(e.target.value)
+        console.log(formData.pic)
         props.setDisplay(formData)
     }
 
