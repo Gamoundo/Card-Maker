@@ -9,6 +9,7 @@ import Home from './Home';
 import Cards from './Cards';
 import Navbar from './Navbar';
 import Card from './Card';
+import GoogleLogin from 'react-google-login';
 
 
 function App() {
@@ -120,6 +121,13 @@ const routes = useRoutes(
       <h1>NJoy</h1>
         <div>
           {uname !== '' && <Navbar />}
+          <GoogleLogin>
+          clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+          buttonText="Login"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={'single_host_origin'}
+          </GoogleLogin>
         {(location.pathname === '/'  && uname === "") && <button onClick={register}> Signup?</button>}
         {(location.pathname === '/'  && uname === "") && <button onClick={login}> Login?</button>}
         </div>
