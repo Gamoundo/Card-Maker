@@ -15,7 +15,9 @@ import GoogleLogin from 'react-google-login';
 function App() {
 
   const logout = () => {
-    localStorage.removeItem("NewJoy")
+    window.localStorage.setItem("NewJoy", JSON.stringify({name: ''}));
+    setuname({name: ''})
+    navigate('/')
   }
 
   const responseGoogle = (response) => {
@@ -118,7 +120,7 @@ console.log(uname)
     setuname(name)
 }
 const routes = useRoutes(
-  [{ path: '/', element: <Home  name={uname} setCardInfo={setCardInfo} cards={userCards} addCards={updateCards}/> },
+  [{ path: '/', element: <Home  name={uname.name} setCardInfo={setCardInfo} cards={userCards} addCards={updateCards}/> },
   { path: '/card', element: <Card  card={cardInfo}/> },
   { path: '/register', element: <Register  changename={changename}/> },
   { path: '/login', element: <Login /> },
@@ -131,7 +133,7 @@ const routes = useRoutes(
       <h1>NJoy</h1>
         <div>
           {uname !== '' && <Navbar />}
-          {uname.name !== '' && <button onClick={logout}>Logout? </button>}
+          {(uname.name !== "" ) && <button onClick={logout}>Logout? </button>}
           {/* {
             uname.name === '' && <GoogleLogin>
             clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"

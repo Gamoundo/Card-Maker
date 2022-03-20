@@ -16,7 +16,9 @@ function Register(props) {
             name: split[0]
         }
         window.localStorage.setItem("NewJoy", JSON.stringify(user));
-        props.changename(user.name)
+        props.changename({
+            name: user.name
+        })
         navigate('/')
 
         
