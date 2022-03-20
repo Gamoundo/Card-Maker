@@ -44,6 +44,14 @@ const uname = props.uname
 const handleSubmit = (e) => {
     e.preventDefault();
     props.update(formData);
+    setformData({
+        pic: "",
+        recipient: "",
+        sender: uname,
+        message: "",
+        occasion: "",
+        tempChoice: 0
+    })
     navigate('/')
 }
 

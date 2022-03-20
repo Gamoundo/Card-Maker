@@ -14,6 +14,14 @@ import GoogleLogin from 'react-google-login';
 
 function App() {
 
+  const logout = () => {
+    localStorage.removeItem("NewJoy")
+  }
+
+  const responseGoogle = (response) => {
+    console.log(response);
+  }
+
   let location = window.location
   const navigate = useNavigate();
   const storeduser = window.localStorage.getItem("NewJoy")
@@ -104,11 +112,13 @@ const login = () => {
   navigate('/login')
 }
 
+console.log(uname)
+
   const changename = (name) => {
     setuname(name)
 }
 const routes = useRoutes(
-  [{ path: '/', element: <Home  name={uname.name} setCardInfo={setCardInfo} cards={userCards} addCards={updateCards}/> },
+  [{ path: '/', element: <Home  name={uname} setCardInfo={setCardInfo} cards={userCards} addCards={updateCards}/> },
   { path: '/card', element: <Card  card={cardInfo}/> },
   { path: '/register', element: <Register  changename={changename}/> },
   { path: '/login', element: <Login /> },
@@ -121,15 +131,19 @@ const routes = useRoutes(
       <h1>NJoy</h1>
         <div>
           {uname !== '' && <Navbar />}
-          <GoogleLogin>
-          clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-          buttonText="Login"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-          cookiePolicy={'single_host_origin'}
-          </GoogleLogin>
+          {uname.name !== '' && <button onClick={logout}>Logout? </button>}
+          {/* {
+            uname.name === '' && <GoogleLogin>
+            clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+            buttonText="Login"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={'single_host_origin'}
+            </GoogleLogin>
+          } */}
+          
         {(location.pathname === '/'  && uname === "") && <button onClick={register}> Signup?</button>}
-        {(location.pathname === '/'  && uname === "") && <button onClick={login}> Login?</button>}
+        {(location.pathname === '/'  && uname.name === "") && <button onClick={login}> Login?</button>}
         </div>
       {routes}
       </div>

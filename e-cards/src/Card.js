@@ -1,6 +1,10 @@
 import React from 'react';
+import {EmailShareButton, TelegramShareButton} from "react-share"
 
 function Card(props) {
+
+
+    
     const stylecard= (obj) =>{
         if(obj.tempChoice === 1){
             return(
@@ -30,6 +34,10 @@ function Card(props) {
         <div>
             <h1> user created card</h1>
             {stylecard(props.card)}            
+        <div>
+            <EmailShareButton />
+            <TelegramShareButton />
+        </div>
         </div>
     )
 }
