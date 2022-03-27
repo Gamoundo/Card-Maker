@@ -60,7 +60,7 @@ const displayCards = (arr) => {
                 tempChoice: obj.tempChoice
                 
             })
-                  navigate('/Card')
+                  navigate(`/card/${props.name}/${obj.message}`)
           }
         return(
             <div className='usercard' onClick={seeCard}>

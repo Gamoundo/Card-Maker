@@ -121,7 +121,7 @@ console.log(uname)
 }
 const routes = useRoutes(
   [{ path: '/', element: <Home  name={uname.name} setCardInfo={setCardInfo} cards={userCards} addCards={updateCards}/> },
-  { path: '/card', element: <Card  card={cardInfo}/> },
+  { path: `card/:userId/:userMessage`, element: <Card  card={cardInfo}/> },
   { path: '/register', element: <Register  changename={changename}/> },
   { path: '/login', element: <Login /> },
   { path: '/cards', element: <Cards /> }

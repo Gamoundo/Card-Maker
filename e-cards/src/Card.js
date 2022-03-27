@@ -1,5 +1,5 @@
 import React from 'react';
-import {EmailShareButton, TelegramShareButton} from "react-share"
+import {EmailIcon, EmailShareButton, TelegramIcon, TelegramShareButton} from "react-share"
 
 function Card(props) {
 
@@ -35,8 +35,13 @@ function Card(props) {
             <h1> user created card</h1>
             {stylecard(props.card)}            
         <div>
-            <EmailShareButton />
-            <TelegramShareButton />
+            <EmailShareButton url={window.location}>
+                <EmailIcon />
+            </EmailShareButton>
+            
+            <TelegramShareButton url={window.location}>
+                <TelegramIcon/>
+            </TelegramShareButton>
         </div>
         </div>
     )

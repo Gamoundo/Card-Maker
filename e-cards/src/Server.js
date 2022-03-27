@@ -6,7 +6,13 @@ const { OAuth2Client } = require('google-auth-library');
 const app = express();
 app.use(express.json());
 
-const users= [ ]
+const users= []
+
+app.post("/api/Njoy", async (req, res) => {
+    res.status(201);
+}
+
+)
 
 
 
